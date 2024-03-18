@@ -521,7 +521,7 @@ It may be due to the following:
         # df.to_csv(file_path, index=False, encoding="utf-8")
         df.to_csv(latest_path, index=False, encoding="utf-8")
 
-        print("CSV Saved: {}".format(file_path))
+        print("CSV Saved: {}".format(latest_path))
 
         pass
 
