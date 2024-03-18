@@ -222,6 +222,7 @@ It may be due to the following:
 - Username is incorrect
 - Twitter is experiencing unusual activity"""
                     )
+                    print(self.username)
                     self.driver.quit()
                     sys.exit(1)
                 else:
@@ -515,8 +516,10 @@ It may be due to the following:
 
         current_time = now.strftime("%Y-%m-%d_%H-%M-%S")
         file_path = f"{folder_path}{current_time}_tweets_1-{len(self.data)}.csv"
+        latest_path = f"{folder_path}latest.csv"
         pd.set_option("display.max_colwidth", None)
-        df.to_csv(file_path, index=False, encoding="utf-8")
+        # df.to_csv(file_path, index=False, encoding="utf-8")
+        df.to_csv(latest_path, index=False, encoding="utf-8")
 
         print("CSV Saved: {}".format(file_path))
 

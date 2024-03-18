@@ -69,6 +69,12 @@ class Tweet:
             self.content += content.text
 
         try:
+            tweetcard = card.find_elements("xpath", './/div[@data-testid="card.wrapper"]//a')
+            self.content += f" link: {tweetcard[0].get_attribute('href')}"
+        except NoSuchElementException:
+            pass
+
+        try:
             self.reply_cnt = card.find_element(
                 "xpath", './/div[@data-testid="reply"]//span'
             ).text
