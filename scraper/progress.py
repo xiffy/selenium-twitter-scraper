@@ -10,7 +10,7 @@ class Progress:
     def print_progress(self, current) -> None:
         self.current = current
         progress = current / self.total
-        print(progress * 100, end=" ")
+        print(int(progress * 100), end=" ")
         # bar_length = 40
         # progress_bar = (
         #     "["
